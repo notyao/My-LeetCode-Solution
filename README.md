@@ -1,2 +1,1 @@
-# My-LeetCode-Solution
-# Python
+# My-LeetCode-Solution using Python
