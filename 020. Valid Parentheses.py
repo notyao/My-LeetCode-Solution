@@ -1,17 +1,15 @@
 class Solution:
     def isValid(self, s):
-        """
-        :type s: str
-        :rtype: bool
-        """
-        stack = []
-        for i in s:
-            if i == "(":
-                stack.append(")")
-            if i == "[":
-                stack.append("]")
-            if i == "{":
-                stack.append("}")
-            elif len(stack)==0 or stack.pop() != i:
-                return False
-        return stack
+            """
+            :type s: str
+            :rtype: bool
+            """
+            d = {')': '(', '}': '{', ']': '['}
+            stack = []
+            for c in s:
+                if c in d:
+                    if not stack or stack.pop() != d[c]:
+                        return False
+                else:
+                    stack.append(c)
+            return not stack
